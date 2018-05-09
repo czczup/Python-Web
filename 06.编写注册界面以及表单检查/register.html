@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>注册界面</title>
+        <link rel="stylesheet" href="css/semantic.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="css/custom.css" media="screen" title="no title" charset="utf-8">
+        <script type="text/javascript" src="js/register.js"></script>
+    </head>
+    <body onload="initForm()">
+        <div class="ui vertical basic segment masthead">
+            <div class="ui inverted text menu">
+                <div class="ui image">
+                    <img src="images/logo.png" alt="" />
+                </div>
+                <div class="right menu">
+                    <div class="item">
+                        
+                        <button type="button" name="button" class="ui inverted circular button" id="timeButton" ></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui register">
+                <div class="ui horizontal divider">注册</div>
+                <form class="ui form">
+                    <div class="field" id="nameField">
+                        <div class="infomation">
+                            <label>姓名</label>
+                            <label id="nameInfo" class="info"></label>
+                        </div>
+                        <input type="text" name="name" id="name" placeholder="请输入姓名" onBlur="checkInputName()" oninput="checkInputName()" onfocus="removeDivInfo()">
+                    </div>
+                    <div class="field">
+                        <label>年龄</label>
+                        <select class="ui fluid dropdown"  id="ageSelect" onfocus="addAgeOption();removeDivInfo()" onchange="selectAge()">
+                            <option value="">请选择年龄</option>
+                        </select>
+                    </div>
+                    <div class="inline fields">
+                        <label for="gender">性别:</label>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="gender" value="man" checked="" id="gender" onfocus="removeDivInfo()">
+                                <label>男</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="gender" value="female" onfocus="removeDivInfo()">
+                                <label>女</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>所在学院</label>
+                            <select class="ui fluid dropdown" id="academy" onchange="selectAcademy()" onfocus="removeDivInfo()">
+                                <option value="">请选择学院</option>
+                                <option value="ITEE">信息与电子工程学院</option>
+                                <option value="AEE">自动化与电气工程学院</option>
+                                <option value="MEE">机械与能源工程学院</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>所在专业</label>
+                            <select class="ui fluid dropdown" id="major" onchange="selectMajor()" onfocus="removeDivInfo()">
+                                <option value="">请选择专业</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="inline fields" id="hobits">
+                        <label>爱好:</label>
+                        <div class="field">
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="sports" class="hobit" onclick="selectHobit()" onfocus="removeDivInfo()">
+                                <label>运动</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="musics" class="hobit" onclick="selectHobit()" onfocus="removeDivInfo()">
+                                <label>音乐</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="games" class="hobit" onclick="selectHobit()" onfocus="removeDivInfo()">
+                                <label>游戏</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="read" class="hobit" onclick="selectHobit()" onfocus="removeDivInfo()">
+                                <label>阅读</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field" id="telephoneField" onfocus="removeDivInfo()">
+                        <div class="infomation">
+                            <label>电话号码</label>
+                            <label id="telephoneInfo" class="info"></label>
+                        </div>
+                        <input type="text" name="telephone" placeholder="请输入电话号码" id="telephone" onblur="checkTelephone()" onfocus="removeDivInfo()">
+                    </div>
+                    <div class="field" id="emailField">
+                        <div class="infomation">
+                            <label>电子邮箱</label>
+                            <label id="emailInfo" class="info"></label>
+                        </div>
+                        <input type="text" name="email" placeholder="请输入电子邮箱" id="email" onblur="checkEmail()" onfocus="removeDivInfo()">
+                    </div>
+                    <div class="field" id="remarkField">
+                        <div class="infomation">
+                            <label>备注</label>
+                            <label id="counter" class="info"></label>
+                        </div>
+                        <textarea rows="2" oninput="countRemark()" onblur="countRemark()" onfocus="removeDivInfo()" id="remark"></textarea>
+                    </div>
+
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" id="agree" onclick="checkButton()">
+                            <label>同意注册条款</label>
+                        </div>
+                    </div>
+                    <button class="ui disabled button submit" id="registerButton" type="button" onclick="addDiv()">提交</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="ui vertical very padded segment" id="footer">
+            <div class="ui grid">
+                <div class="four wide column">
+                    <div class="ui image">
+                        <img src="images/red_logo.png" alt="" />
+                    </div>
+                </div>
+
+                <div class="four wide column">
+                    <div class="ui vertical text menu">
+                        <div class="item">
+                            <h3 class="ui header">联系我们</h3>
+                        </div>
+                        <div class="item">
+                            地址：浙江科技学院
+                        </div>
+                        <div class="item">
+                            Fax : 010-666666
+                        </div>
+                    </div>
+                </div>
+                <div class="four wide column">
+                    <div class="ui vertical text menu">
+                        <div class="item">
+                            <h3 class="ui header">了解更多</h3>
+                        </div>
+                        <div class="item">
+                            其他产品
+                        </div>
+                        <div class="item">
+                            公司历史
+                        </div>
+                    </div>
+                </div>
+                <div class="four wide column">
+                    <div class="ui vertical text menu">
+                        <div class="item">
+                            Design by
+                        </div>
+                        <div class="item">
+                            <h3 class="ui header logo">CZCZ94CZ</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

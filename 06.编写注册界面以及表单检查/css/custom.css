@@ -1,0 +1,54 @@
+.ui.vertical.basic.segment.masthead {
+    height: 800px;
+    background: url('../images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.ui.register {
+    width: 700px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.ui.teal.message {
+    width: 700px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+.ui.horizontal.divider {
+    font-size: 30px;
+}
+
+body {
+    font-family: 微软雅黑;
+}
+
+.ui.button.submit {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 200px;
+    opacity: 1.0 !important;
+    margin-top: 10px;
+}
+
+.infomation {
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+.info {
+    float: right;
+}
+
+.ui.form .field.field input:-webkit-autofill {
+    box-shadow: 0px 0px 0px 100px #ffffff inset !important;
+    border-color: rgba(34, 36, 38, 0.15) !important;
+}
